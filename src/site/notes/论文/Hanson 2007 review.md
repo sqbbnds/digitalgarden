@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/论文/Hanson 2007 review/"}
+{"dg-publish":true,"permalink":"/论文/Hanson 2007 review/","created":"2024-01-29T17:47:18.659+08:00","updated":"2024-02-03T19:52:08.000+08:00"}
 ---
 
 # [[声子\|声子]]诱导[[自旋-轨道耦合\|自旋-轨道耦合]]的能级的跃迁
