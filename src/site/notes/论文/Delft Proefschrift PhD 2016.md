@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/论文/Delft Proefschrift PhD 2016/"}
+{"dg-publish":true,"permalink":"/论文/Delft Proefschrift PhD 2016/","created":"2024-01-29T17:47:18.629+08:00","updated":"2024-02-05T11:27:17.549+08:00"}
 ---
 
 #GaAs/AlGaAs
@@ -123,8 +123,8 @@ D.P. DiVincenzo提出[^10] [^11]，一个优秀的qubit物理载体候选应该�
 - bias-tees：混合微波源（高频信号发生器）和脉冲源（也是DAC出来的），R=10MΩ，C=47nF，即时间常数~500ms脉冲电压源和微波源
 ![Pasted image 20240102160719.png](/img/user/Attachment/Pasted%20image%2020240102160719.png)
 # 样品制备
-一个问题：半导体中的无序性（在结构表面或层与层之间的doping impurities, dangling bonds, impurities and defects），会导致随机的“非预期的量子点”，这种量子点相比于目标的量子点来说是不可控的，应该要避免。
-测度方法：
+## 迁移率与载流子浓度进展
+迁移率是衡量半导体中杂质的表征指标之一
 - 载流子迁移率越高，样品的可调性和稳定性就越高[^34]。2010~2016年实现的单电子自旋和双电子自旋的量子点的电子迁移率在$4\times 10^4-12\times 10^4\mathrm{cm^2/(Vs)}$.
 - 用于量子计算的载流子密度越小越好，费米波长则会越大，更容易实现量子点。目标是小于$4\times 10^{11} \mathrm{cm^{-2}}$.
 - GaAs材料的迁移率在$T<1\mathrm{K}$时达$3.2\times 10^7\mathrm{cm^2/(Vs)}$，电荷密度$3\times 10^{11} \mathrm{cm^{-2}}$。Si材料的迁移率却低两个数量级。
@@ -143,20 +143,33 @@ D.P. DiVincenzo提出[^10] [^11]，一个优秀的qubit物理载体候选应该�
 | 2014 | strain Si(100) 15nm, SiGe 1000nm/100nm, x=0.18, Si-cap 1nm | 2.2×10⁶ | 1.8×10¹¹ |  |  |  | M. Yu. Melnikov, A. A. Shashkin, V. T. Dolgopolov, S. H. Huang, C. W. Liu and S. V. Kravchenko, JETP Letters 100, 114 (2014).<br>M. Yu. Melnikov, A. A. Shashkin, V. T. Dolgopolov, S. H. Huang, C. W. Liu and S. V. Kravchenko, Appl. Phys. Lett. 106, 092102 (2015). |  |
 | 2015 | 低的Si QW层氧离子含量，实验发现少量的背景氧离子导致大的QW中的杂质电荷 | 1.6×10⁵ | 2.17×10¹¹ |  |  | 受远端杂质散射限制进一步的提高 | X.Mi, T.M. Hazard, C. Payette, K.Wang, D.M. Zajac, J. V. Cady, and J. R. Petta, Phys. Rev. B 92, 035304 (2015). |  |
 | 2015 | 衬底换成完全松弛的SiGe单晶薄膜栅，消除位错 | 4×10⁴ | 4×10¹¹ |  |  | 与传统SiGe一样，主要限制在Si/介质界面栅的电荷杂质 | Y. S. Li, P. Sookchoo, X. Cui, R. T. Mohr, D. E. Savage, R. H. Foote, R. B. Jacobson, J. R. Sanchez-Perez, D. M. Paskiewicz, X. Wu, D. R. Ward, S. N. Coppersmith, M. A. Eriksson, andM. G. Lagally, ACS Nano 9, 4891 (2015). | 首次用SiGe薄膜作为衬底 |
+## 杂质影响
+主要由杂质引起的无序性（在结构表面或层与层之间的 doping impurities, dangling bonds, impurities and defects），会导致随机的“非预期的量子点”，这种量子点相比于目标的量子点来说是不可控的，所以需要避免。
+
 杂质对迁移率的影响：
 - 背景杂质散射$\mu \propto n$，背景杂质通过实体碰撞影响载流子
-- 远端杂质散射$\mu \propto n^{1.5}$，远处的杂质通过库伦场散射载流子，比如来自于Si-Cap的fixed charge。一种降低远端杂质的方式是增加SiGe spacing layer厚度，但这会降低lateral gate器件的调制作用。
+- 远端杂质散射 $\mu \propto n^{1.5}$，远处的杂质通过库伦场散射载流子，比如来自于 Si-Cap 的 fixed charge。一种降低远端杂质的方式是增加 SiGe spacing layer 厚度，但这会降低 lateral gate 器件的调制作用。
 
-相关信息：
+## 其他信息
 [[张力硅晶技术\|张力硅晶技术]]
 晶格常数适配度$\Delta=\frac{|a_{e}-a_{s}|}{a_{e}}$，其中$a_{e}$是外延层的晶格常数，$a_{s}$是衬底的晶格常数。
 临界厚度：外延层中刚刚要出现位错时的外延层厚度，小于临界厚度时，外延层不会出现新的位错；大于临界厚度时，外延层肯定出现新的位错。
+## 样品结构
+![Pasted image 20240205112442.png|800](/img/user/Attachment/Pasted%20image%2020240205112442.png)
+
+(i) Si₁₋ₓGeₓ graded buffer (0 < x < 0.3 for this work),
+(ii) Si 0.7 Ge 0.3 relaxed buffer,
+(iii) strained Si quantumwell (2 DEG),
+(iv) relaxed Si 0.7 Ge 0.3 spacer,
+
+
+
 
 
 ---
 # 参考文献
 
-[^1]:C. Weisbuch and B. Vinter, ‘Quantum Semiconductor Structures’, Accademic Press, Inc., New York (1991).
+[^1]: C. Weisbuch and B. Vinter, ‘Quantum Semiconductor Structures’, Accademic Press, Inc., New York (1991).
 [^2]: T. J. Thornton,M. Pepper, H. Ahmed, D. Andrews and G. J. Davies, Phys. Rev. Lett. 56, 1198 (1986).
 [^3]: B. J. van Wees, H. van Houten, C. W. J. Beenakker, J. G. Williamson, L. P. Kouwenhoven, D. van derMarel and C. T. Foxon, Phys. Rev. Lett. 60, 848 (1988).
 [^4]: L. P. Kouwenhoven, D. G. Austing and S. Tarucha, Rep. Prog. Phys. 64, 701 (2001).
