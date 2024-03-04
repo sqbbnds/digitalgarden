@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/论文/Delft Proefschrift PhD 2016/","created":"2024-01-29T17:47:18.629+08:00","updated":"2024-02-05T11:27:17.549+08:00"}
+{"dg-publish":true,"permalink":"/论文/Delft Proefschrift PhD 2016/","created":"2024-03-04T15:17:51.138+08:00","updated":"2024-03-04T09:25:36.000+08:00"}
 ---
 
 #GaAs/AlGaAs
@@ -155,15 +155,64 @@ D.P. DiVincenzo提出[^10] [^11]，一个优秀的qubit物理载体候选应该�
 晶格常数适配度$\Delta=\frac{|a_{e}-a_{s}|}{a_{e}}$，其中$a_{e}$是外延层的晶格常数，$a_{s}$是衬底的晶格常数。
 临界厚度：外延层中刚刚要出现位错时的外延层厚度，小于临界厚度时，外延层不会出现新的位错；大于临界厚度时，外延层肯定出现新的位错。
 ## 样品结构
+### 总览
+(i) Si₁₋ₓGeₓ graded buffer (0 < x < 0.3 for this work)
+(ii) $\mathrm{Si_{0.7}Ge_{0.3}}$ relaxed buffer
+(iii) strained Si quantum well (2 DEG)
+(iv) relaxed $\mathrm{Si_{0.7}Ge_{0.3}}$  spacer
+(v) strained Si cap
 ![Pasted image 20240205112442.png|800](/img/user/Attachment/Pasted%20image%2020240205112442.png)
 
-(i) Si₁₋ₓGeₓ graded buffer (0 < x < 0.3 for this work),
-(ii) Si 0.7 Ge 0.3 relaxed buffer,
-(iii) strained Si quantumwell (2 DEG),
-(iv) relaxed Si 0.7 Ge 0.3 spacer,
+### Si₁₋ₓGeₓ relaxed buffer
+ 用于解决 Si 衬底和异质结 $\mathrm{Si_{0.7}Ge_{0.3}}$ 之间的晶格常数失配问题。一般从 0<x<0.3 以渐变，Ge 浓度梯度 $\nabla x< 10\% \mathrm{(\mu m)^{-1}}$。*所以 0~30%的 Ge 浓度需要至少 3μm*
+ 如果没有这一层，位错将会穿过整个结构，到达 Si QW 层。
+ 下图左侧展示了  Si₁₋ₓGeₓ 的 Si 临界厚度随 Ge 浓度 x 的变化，下图右侧展示了两种位错类型：Misfit 和 Threading。 ![Pasted image 20240205152729.png|800](/img/user/Attachment/Pasted%20image%2020240205152729.png)
+ 
+### Si₀₇Ge₀₃ relaxed buffer
+形成异质结的一个势垒。
+1. 先长一层厚的常 Ge 浓度的 SiGe。
+2. 然后化学机械抛光（chemicalmechanical polishing，CMP，） 以减少外延积累的缺陷。
+3. 再长一层常 Ge 浓度的 SiGe。
 
+### strained Si quantum well (2 DEG)
+用于形成量子阱和 2 DEG 。
+这一层的厚度决定了电子受 z 方向的限制。但这一层的厚度又受到上图 d 中的临界厚度限制，不能太厚，否则会影响迁移率。
 
+### Si₀₇Ge₀₃ spacer
+形成异质结的另一个势垒，决定了 2 DEG 的深度。
+这一层越厚，2 DEG 的迁移率越高（因为越远离整个异质结的表面，表面有很多杂质），但越难对量子阱进行电调制。
 
+### Si cap
+ 用于保护底下的异质结。Si cap 之后会自然氧化成 SiO，从而形成比 SiGe 层更化学惰性的表面。
+ 这一层的厚度必须足够地薄（<1 nm），避免产生新的导电通道阻碍 Si QW 的电子密度调控。
+
+## Fab 制造
+如下图，一共 11 步。第一组图是最终结构，第二组图是各个步骤的截面图，第三组图是各个步骤的俯视图
+![Pasted image 20240207162248.png|700](/img/user/Attachment/Pasted%20image%2020240207162248.png)
+Schematic cross-cut of the device. Fabrication starts with a heterostructure (1) composed of a silicon quantum well (2) between two layers of silicon germanium (3) and a silicon cap layer on top (4). After the heterostructure is covered with aluminumoxide (5), the mesa (6) is etched into the heterostructure, at least to the depth of the quantum well (2), creating the micro-mesa (region between the etched trenches). After selective removal of aluminum oxide, ion implantation (7) creates an ohmic path between the subsequent metallization (8) and the quantum well (2). Fine gates (9) are deposited on the aluminum oxide. Leads (10) connect the ohmic metallization (8) and fine gates (9) (not shown) to big contact pads outside of the micromesa. A thick layer of aluminum oxide (11) covers everything, including the leads (12) for the accumulation gates. Fine accumulation gates (13) are deposited on top of the aluminum oxide. Holes (14) are etched in the aluminumoxide and used to connect (15) the fine accumulation gates (13) to the nowexposed leads (12). Black lines are added for clarity.
+![Pasted image 20240207162302.png|700](/img/user/Attachment/Pasted%20image%2020240207162302.png)
+![Pasted image 20240207162426.png|700](/img/user/Attachment/Pasted%20image%2020240207162426.png)
+
+| 步骤 | 操作 | 用途 | 备注 |
+| ---- | ---- | ---- | ---- |
+| 1 | 沉淀第一层薄电介质，如 Al₂O₃，并使用抗腐蚀剂 | 保护衬底结构；隔离金属与半导体以减少栅漏电 | 通过原子沉淀法 ALD，工艺容易沉淀出高质量的 Al₂O₃：高的稳定性、均一性、击穿电压。见俯视图(1)的绿色区域 |
+| 2 | 沉淀对齐标记 | 为电子束步骤提供层间的对齐，误差~10 nm | 标志见俯视图(1)的四个红点 |
+| 3 | 腐蚀出 mesa 的边界，要求腐蚀的深度大于 2 DEG的深度，micro-mesa 区域一般为 150×150 μm² | 用于在 xy 平面上的隔离。一方面，把真正的量子点区域和宏大的 pad 区域隔离开，避免 pad 的静电环境对量子点的影响。另一方面形成 pad 之间的隔离，减少 pad 之间的漏电。 | 见截面图(2-3) 俯视图(2-3) |
+| 4 | 离子注入，如磷离子。离子注入后需要快速退火。 | 形成欧姆接触的源漏级（直接与 2 DEG 导通） | 见截面图(4) 俯视图(4) |
+| 5 | HF 去除自然生成的 SiO₂，并立即在欧姆接触的区域沉淀薄金属 | 避免欧姆接触的区域的 Si-cap 自然氧化 | 见截面图(5) 俯视图(5) |
+| 6 | 第一次 e-beam，不超出 mesa 边界 | 产生 fine gate | 见截面图(6) 俯视图(6) |
+| 7 | 第二次 e-beam，在 mesa 边界外 | 产生 lead 和 pad。pad 需要充分大（100×100 μm²）以便于与宏观世界电连接 | 见截面图(7) 俯视图(7) |
+| 8 | 沉淀第二层电介质，远比第一层厚 | 隔离普通 gate 和 accumulation gate，所以需要足够厚。 | 见截面图(8) 俯视图(8)。也是用 ALD 法。 |
+| 9 | 沉淀金属，不超出 mesa 边界 | 产生 fine accumulation gates | 见截面图(9) 俯视图(9) |
+| 10 | 腐蚀出vias | 存在两种 vias。一种用于连接 accumulation gates（见俯视图中的 4 个亮黄色的小方块），另一种用于与 bonding 线连接（见俯视图中每一个 pad 都会暴露出来的大方块） | 见截面图(10) 俯视图(10) |
+| 11 | 沉淀金属 | 产生 accumulation gates 的 lead | 见截面图(11) 俯视图(11) |
+
+> [!note] 专业术语
+> mesa：勾勒出量子点所需要的平面区域的线
+> micro-mesa：mesa 所围成的中心区域
+> fine gates：在 micro-mesa 区域内的精细的 gate，位于第一层电介质之上（第一步产生的电介质）
+> leads：芯片中的导电的引线
+> via：导电的通孔
 
 
 ---
