@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/论文/Delft Veldhorst 2023/","created":"2024-01-29T17:47:18.644+08:00","updated":"2024-02-03T19:52:08.000+08:00"}
+{"dg-publish":true,"permalink":"/论文/Delft Veldhorst 2023/","created":"2024-03-04T15:17:51.139+08:00","updated":"2024-03-04T09:25:37.000+08:00"}
 ---
 
 #量子点 #Si/SiGe #栅调控
